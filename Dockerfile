@@ -1,9 +1,8 @@
 FROM debian:buster-slim
 
-LABEL maintainer="Saurav Giri <saurav.giri@itonics.de>"
+LABEL maintainer="Saurav Giri <realanmup@gmail.com>"
 
 ENV DEBIAN_VERSION buster
-ENV CLAMAV_VERSION 0.102
 
 # install av daemon
 RUN echo "deb http://http.debian.net/debian/ $DEBIAN_VERSION main contrib non-free" > /etc/apt/sources.list && \
@@ -11,8 +10,8 @@ RUN echo "deb http://http.debian.net/debian/ $DEBIAN_VERSION main contrib non-fr
     echo "deb http://security.debian.org/ $DEBIAN_VERSION/updates main contrib non-free" >> /etc/apt/sources.list && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y -qq \
-        clamav-daemon=${CLAMAV_VERSION}* \
-        clamav-freshclam=${CLAMAV_VERSION}* \
+        clamav-daemon* \
+        clamav-freshclam* \
         libclamunrar9 \
         wget && \
         apt-get clean && \
