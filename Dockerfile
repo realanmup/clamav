@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:buster
 
 LABEL maintainer="Saurav Giri <realanmup@gmail.com>"
 
