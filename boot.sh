@@ -17,7 +17,7 @@ do
 done
 
 # Start services on background
-# freshclam -d &
+freshclam -d &
 clamd &
 
 pids=`jobs -p`
